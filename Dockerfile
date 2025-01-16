@@ -59,6 +59,6 @@ RUN python -m compileall .
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked
 
-# ERROR (no odoo user, or missing entry in /etc/passwd)
-RUN useradd -ms /bin/bash odoo
+# ERROR: unable to find user odoo: no matching entries in passwd file
+RUN useradd -ms /bin/bash odoo && echo "odoo:secret" | chpasswd
 USER odoo
