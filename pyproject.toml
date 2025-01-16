@@ -28,7 +28,7 @@ packages = ["odoo"]
 [tool.hatch-odoo]
 # dependencies that are not in the addons manifest
 dependencies = [
-    "odoo==17.0.*",
+    "odoo==16.0.*",
     # Add some constraints to Odoo deps that should be in their setup.py
     "lxml[html_clean]>=5.2",
     "setuptools<71",
@@ -37,5 +37,5 @@ dependencies = [
 addons_dirs = ["odoo/addons"]
 
 [tool.uv.sources]
-odoo = { git = "https://github.com/OCA/OCB", branch = "17.0" }
-odoo-addon-mis_builder_budget = { git = "https://github.com/OCA/mis-builder", rev = "refs/pull/634/head", subdirectory = "mis_builder_budget" }
+odoo = { git = "https://github.com/OCA/OCB", branch = "16.0" }
+# odoo-addon-mis_builder_budget = { git = "https://github.com/OCA/mis-builder", rev = "refs/pull/634/head", subdirectory = "mis_builder_budget" }

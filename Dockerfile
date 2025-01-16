@@ -4,7 +4,7 @@
 # Base stage, with the non-python runtime dependencies, and uv.
 #
 
-FROM ghcr.io/acsone/odoo-bedrock:17.0-py312-jammy-latest AS base
+FROM ghcr.io/acsone/odoo-bedrock:16.0-py312-jammy-latest AS base
 
 # Install apt runtime dependencies.
 RUN set -e \
