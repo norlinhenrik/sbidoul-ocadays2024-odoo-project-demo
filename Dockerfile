@@ -11,6 +11,7 @@ RUN set -e \
   && apt update \
   && apt -y install --no-install-recommends \
        postgresql-client \
+       passwd \
   && apt -y clean \
   && rm -rf /var/lib/apt/lists/*
 
@@ -60,5 +61,6 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked
 
 # ERROR: unable to find user odoo: no matching entries in passwd file
-RUN useradd -ms /bin/bash odoo && echo "odoo:secret" | chpasswd
+RUN (id -u odoo &>/dev/null || useradd -ms /bin/bash odoo) && echo "odoo:secret" | chpasswd
+
 USER odoo
