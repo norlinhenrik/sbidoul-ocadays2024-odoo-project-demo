@@ -4,7 +4,7 @@
 # Base stage, with the non-python runtime dependencies, and uv.
 #
 
-FROM ghcr.io/acsone/odoo-bedrock:16.0-py312-jammy-latest AS base
+FROM ghcr.io/acsone/odoo-bedrock:16.0-py39-jammy-latest AS base
 
 # Install apt runtime dependencies.
 RUN set -e \
@@ -32,7 +32,7 @@ RUN set -e \
   && apt update \
   && apt -y install --no-install-recommends \
        git \
-       python3.12-dev \
+       python3.9-dev \
        build-essential \
        libpq-dev \
   && apt -y clean \

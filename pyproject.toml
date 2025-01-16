@@ -9,7 +9,7 @@ name = "ocadays202-uv-demo"
 version = "0.1.0"
 description = "OCA Days 2024 Odoo with uv demo"
 readme = "README.md"
-requires-python = "==3.12.*"
+requires-python = "==3.9.*"
 dynamic = ["dependencies"]
 
 # tell uv when dependencies may change
