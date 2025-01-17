@@ -9,7 +9,7 @@ name = "ocadays202-uv-demo"
 version = "0.1.0"
 description = "OCA Days 2024 Odoo with uv demo"
 readme = "README.md"
-requires-python = "==3.12.*"
+requires-python = "==3.9.*"
 dynamic = ["dependencies"]
 
 # tell uv when dependencies may change
@@ -28,7 +28,7 @@ packages = ["odoo"]
 [tool.hatch-odoo]
 # dependencies that are not in the addons manifest
 dependencies = [
-    "odoo==17.0.*",
+    "odoo==15.0.*",
     # Add some constraints to Odoo deps that should be in their setup.py
     "lxml[html_clean]>=5.2",
     "setuptools<71",
@@ -37,4 +37,4 @@ dependencies = [
 addons_dirs = ["odoo/addons"]
 
 [tool.uv.sources]
-odoo = { git = "https://github.com/OCA/OCB", branch = "17.0" }
+odoo = { git = "https://github.com/loymcom/ocb", branch = "15.0" }
