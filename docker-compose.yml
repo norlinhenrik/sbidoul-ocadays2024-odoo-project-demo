@@ -1,6 +1,6 @@
 services:
   web:
-    build: .
+    image: ghcr.io/norlinhenrik/sbidoul-ocadays2024-odoo-project-demo/uv-level9:latest
     depends_on:
       - db
       - kwkhtmltopdf
