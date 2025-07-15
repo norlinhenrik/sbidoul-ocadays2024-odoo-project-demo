@@ -1,5 +1,7 @@
 # OCA Days 2024 uv Odoo project demo
 
+This line is added by Henrik Norlin
+
 ## Level 1
 
 In this level, we have a very simple `pyproject.toml`, that is
