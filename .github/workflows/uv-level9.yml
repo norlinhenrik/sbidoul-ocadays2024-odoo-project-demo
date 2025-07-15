@@ -1,0 +1,36 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "uv-level9" ]
+  pull_request:
+    branches: [ "uv-level9" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build the Docker image
+        run: |
+          docker build . --file DockerfileOdoo \
+            --tag ghcr.io/${{ github.repository }}/uv-level9:$(date +%Y-%m-%d) \
+            --tag ghcr.io/${{ github.repository }}/uv-level9:latest
+
+      - name: Push Docker image
+        run: docker push ghcr.io/${{ github.repository }}/uv-level9:$(date +%Y-%m-%d)
+
+      - name: Push Docker image with latest tag
+        run: docker push ghcr.io/${{ github.repository }}/uv-level9:latest
