@@ -6,8 +6,9 @@ services:
     # docker-compose.yml file (the first in the devcontainer.json "dockerComposeFile"
     # array). The sample below assumes your primary file is in the root of your project.
     #
-    build:
-      target: dependencies
+    # build:
+    #   target: dependencies
+    image: ghcr.io/norlinhenrik/sbidoul-ocadays2024-odoo-project-demo/uv-level9:latest
 
     environment:
       - WORKERS=0
