@@ -5,6 +5,7 @@ on:
     branches: [ "uv-level9" ]
   pull_request:
     branches: [ "uv-level9" ]
+  workflow_dispatch:
 
 jobs:
 
